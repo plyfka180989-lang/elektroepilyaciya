@@ -1510,7 +1510,14 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   .первый-экран--разворот .кикер { justify-self: start; }
 
   .первый-экран--разворот .блок__внутри { width: calc(100% - 2 * var(--отступ-блока));
-    grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr); }
+    grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr);
+
+    padding-inline-start: max(0px, calc((100% - var(--ширина)) / 2 - var(--отступ-блока))); }
+  .сторона--слева.первый-экран--разворот .блок__внутри { padding-inline-start: 0;
+    padding-inline-end: max(0px, calc((100% - var(--ширина)) / 2 - var(--отступ-блока))); }
+
+  .блок.первый-экран--разворот { display: flex; flex-direction: column; }
+  .блок.первый-экран--разворот > .блок__внутри { flex: 1 1 auto; margin-inline: auto; }
 
   .первый-экран--разворот .первый-экран__картинка { order: 0; aspect-ratio: auto; min-height: 100%;
     margin: calc(-.6 * var(--отступ-секции)) calc(-1 * var(--отступ-блока)) calc(-.7 * var(--отступ-секции)) 0; }
